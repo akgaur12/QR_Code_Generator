@@ -11,3 +11,10 @@ root.config(bg='#e4e8eb')
 root.resizable(0,0)
 logo = PhotoImage(file='logo.png')
 root.iconphoto(False, logo)
+
+Label(root, text='QR Code Generator', font=('Consolas', 24, ), bg='#e4e8eb', fg='blue').pack(pady=(15,18))
+Label(root, text='Paste link or text to create QR Code', font=('Bahnschrift', 12), bg='#e4e8eb',).pack()
+
+
+
+
