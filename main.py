@@ -15,7 +15,22 @@ def QR_Code():
     lbl.place(x=5, y=5, width=210, height=210)
     lbl.image_names = img
 
+#function to download QR Code
+def save():
+    path = filedialog.askdirectory()
+    if path=='':
+        messagebox.showwarning('Save', 'Path Not Selected')
+    else:
+        if en_file_name.get()!='':
+            name = path+'/'+en_file_name.get()+'.png'
+        else:
+            name = path+'/QR Code.png'
 
+        qr_img.save(name)
+        messagebox.showwarning('Save', 'QR Code Saved')
+        file_name.set('')
+        
+  
 #Creating main window
 root = Tk()
 root.title("QR Code Generator")
