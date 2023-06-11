@@ -3,6 +3,19 @@ from tkinter import messagebox, filedialog
 from PIL import Image, ImageTk
 import qrcode 
 
+#function to generate QR Code
+def QR_Code():
+    global qr_img
+    qr_img = qrcode.make(en.get())
+    qr_img.save('qr.png')
+
+    img = Image.open('qr.png').resize((230,230))
+    img = ImageTk.PhotoImage(img)
+    lbl = Label(qr, image=img)
+    lbl.place(x=5, y=5, width=210, height=210)
+    lbl.image_names = img
+
+
 #Creating main window
 root = Tk()
 root.title("QR Code Generator")
